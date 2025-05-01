@@ -25,8 +25,8 @@ FIRST You should copy the entire raw content of the main.js into a text editor o
 - You should now have something like this : ![ULXBFrT](https://github.com/teisseire117/DeleteTweets/assets/43145883/f784c575-efbb-42a2-a217-4700ba715b7e)
 - Click on Fetch/XHR : ![KtZYL0L](https://github.com/teisseire117/DeleteTweets/assets/43145883/f0cdb3e8-f9ee-4ce3-ac39-c0a463c00bf6)
 - Now go to your X Profile and click on your "Replies" tab
-- Now click on the request which Name starts with `UserTweetsAndReplies`, and look for the authorization/X-Client-Transaction-Id values, as in screenshot: ![pxN8nth](https://github.com/teisseire117/DeleteTweets/assets/43145883/8f6b0123-2f51-41da-a234-255c5bbb5589)
-- Now, in your text editor, replace the values in the .js from this repository of the according variables, by the values of the two variables you found, here is an example of how it should look in the end : ![E0M6Bf9](https://github.com/teisseire117/DeleteTweets/assets/43145883/bac5806b-9c76-4018-b2c0-55fb9080e715)
+- Now click on the request which Name starts with `UserTweetsAndReplies`, and look for the authorization/X-Client-Transaction-Id values.
+- Now, in your text editor, replace the values in the .js from this repository of the according variables, by the values of the two variables you found.
 - (Ignore the X-Client-UUID Values in any screenshots you see in this tutorial, this value has been removed! Don't add it!)
 
 ## Filtering / Options
