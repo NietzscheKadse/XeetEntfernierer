@@ -1,8 +1,11 @@
 # Disclaimer
 
-It should work just fine, I regularly use the script myself, but if anything wrong happens I am not taking any responsibility. Do not use this script if the 0.1% possible failure scares you.
-I, Kadse, modified this script heavily from Lyfhael's Original "DeleteTweets" (Found at https://github.com/Lyfhael/DeleteTweets) because it didn't work anymore. But I am a JS-Noob, so maybe also don't use it if the slightly higher 1% possibility of failure scares you.
-This entire code is provided "AS IS" and I take absolutely no responsibility and no warranty is given. I take no Copyright for these modifications. The code is, as far as I am concerned, still intellectual property of Lyfhael.
+It should work just fine, I regularly use the script myself, but if anything wrong happens I am not taking any responsibility. Do not use this script if the 0.1% possible failure scares you. 
+
+I, Kadse, modified this script heavily from Lyfhael's Original "DeleteTweets" (Found at https://github.com/Lyfhael/DeleteTweets) because it didn't work anymore. But I am a JS-Noob, so maybe also don't use it if the slightly higher 1% possibility of failure scares you. 
+
+This entire code is provided "AS IS" and I take absolutely no responsibility and no warranty is given. I take no Copyright for these modifications. The code is, as far as I am concerned, still intellectual property of Lyfhael. 
+
 
 # Prerequisites
 
