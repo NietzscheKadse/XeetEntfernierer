@@ -42,6 +42,9 @@ Now it should work!
 
 Note that with the new Rate Limits and X's stupid handling of these, it is normal to encounter multiple 404 errors in a deletion. Thats completely normal. You only need to open an Issue here or change the "override_resource" variable when it doesn't even start, even after a minute of trying!
 
+If really nothing works, contact me on Discord: arm_11813
+I am more active there than here.
+
 ## Filtering / Options
 Now that you filled in the authentication details, you can filter which tweets to delete in the `delete_options` Array. It is right under the Authentication Variables you just filled in.
 
@@ -72,6 +75,7 @@ When it's over, launch the script a second time, there sometime are a few leftov
 # Support
 
 I allow tickets in German 🇩🇪 but prefer English if you can speak it, so everyone can understand.
+Feel free to ping me on Discord about a new Issue, I am not that much on GitHub: arm_11813
 
 # FAQ
 
