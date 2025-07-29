@@ -29,6 +29,19 @@ FIRST You should copy the entire raw content of the main.js into a text editor o
 - Now, in your text editor, replace the values in the .js from this repository of the according variables, by the values of the two variables you found.
 - (Ignore the X-Client-UUID Values in any screenshots you see in this tutorial, this value has been removed! Don't add it!)
 
+## If you encounter 403/404 errors
+Before opening an Issue, try to change the "override resource" variable I specified in the config options.
+
+When you look into the "UserTweetsAndReplies" request, you should see that massive request URL right at the top: 
+<img width="821" height="63" alt="image" src="https://github.com/user-attachments/assets/b25a10fc-2c51-4d99-89c9-8e3c90eeb154" />
+
+In this Request URL there is that part after "graphql" between two Slashes. Copy only the Part between the Slashes (As highlightet in the image, in this Example it would be WJdO9AzTVxm7lmjLgreeEA ) and set it into the "override_resource" variable.
+<img width="375" height="50" alt="image" src="https://github.com/user-attachments/assets/9c4b6d5f-47a3-4870-87cd-82f17dbe7d0a" />
+
+Now it should work!
+
+Note that with the new Rate Limits and X's stupid handling of these, it is normal to encounter multiple 404 errors in a deletion. Thats completely normal. You only need to open an Issue here or change the "override_resource" variable when it doesn't even start, even after a minute of trying!
+
 ## Filtering / Options
 Now that you filled in the authentication details, you can filter which tweets to delete in the `delete_options` Array. It is right under the Authentication Variables you just filled in.
 
