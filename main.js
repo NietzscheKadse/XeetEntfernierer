@@ -6,9 +6,6 @@ var override_resource = ""; // If you get a 404 or 403 it could be that X change
 
 // YOUR DELETION OPTIONS / FILTERS:
 var delete_options = {
-    // Do you want to import the Tweets from an X Archive?
-    "from_archive": false,
-    
     // "true": Unretweets all your Retweets (respects other filters, so not *all* necessarily)
     // "false": Keeps all your retweets on your profile and won't unretweet/delete them.
     "unretweet": false,
@@ -33,13 +30,22 @@ var delete_options = {
         "222222222222"
     ],
 
-    // This option probably doesn't work as of May 2025, but if you try it and it fails please open an Issue in this Git project so I can debug it. I have no old tweets myself.
-    "old_tweets": false,
-
     // Only deletes Tweets AFTER/BEFORE the set date (excluding it)
     // CAUTION: Sometimes it uses your Timezone and sometimes it uses GMT. So better give a day of buffer and delete the rest yourself, if you don't want to risk losing any Tweets outside the date range.
     "after_date": new Date('1900-01-01'),
     "before_date": new Date('2100-01-01')
+
+    "field_toggles": true //If you have problems/errors as a last resort disabling this MIGHT fix it.
+
+    // ------------------------------------ //
+    // DEPRECATED OPTIONS - MIGHT NOT WORK! //
+    // ------------------------------------ //
+
+    // Do you want to import the Tweets from an X Archive? (UNTESTED! Might not work!)
+    "from_archive": false,
+	    
+    // This option probably doesn't work as of May 2025, but if you try it and it fails please open an Issue in this Git project so I can debug it. I have no old tweets myself.
+    "old_tweets": false, //PROBABLY WONT WORK!!!!
 };
 
 /*
@@ -101,6 +107,7 @@ async function fetch_tweets(cursor, retry = 0) {
 
     var variable = "";
     var feature = "";
+    var field_toggles = `&fieldToggles=%7B%22withArticlePlainText%22%3Afalse%7D`;
     if (delete_options["old_tweets"] == false) {
 	// Variable & Feature Parameters got changed in April 2025. We have to include a lot more of them now.
 	// UPDATE: 2 New Variables. In June "payments_enabled" got added and in June "responsive_web_grok_community_note_auto_translation_is_enabled" There are also many other variables that got added, but those don't throw errors when left out.
@@ -111,7 +118,11 @@ async function fetch_tweets(cursor, retry = 0) {
         feature = `&features=%7B%22responsive_web_graphql_exclude_directive_enabled%22%3Atrue%2C%22verified_phone_label_enabled%22%3Afalse%2C%22creator_subscriptions_tweet_preview_api_enabled%22%3Atrue%2C%22responsive_web_graphql_timeline_navigation_enabled%22%3Atrue%2C%22responsive_web_graphql_skip_user_profile_image_extensions_enabled%22%3Afalse%2C%22tweetypie_unmention_optimization_enabled%22%3Atrue%2C%22responsive_web_edit_tweet_api_enabled%22%3Atrue%2C%22graphql_is_translatable_rweb_tweet_is_translatable_enabled%22%3Atrue%2C%22view_counts_everywhere_api_enabled%22%3Atrue%2C%22longform_notetweets_consumption_enabled%22%3Atrue%2C%22responsive_web_twitter_article_tweet_consumption_enabled%22%3Afalse%2C%22tweet_awards_web_tipping_enabled%22%3Afalse%2C%22freedom_of_speech_not_reach_fetch_enabled%22%3Atrue%2C%22standardized_nudges_misinfo%22%3Atrue%2C%22tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled%22%3Atrue%2C%22longform_notetweets_rich_text_read_enabled%22%3Atrue%2C%22longform_notetweets_inline_media_enabled%22%3Atrue%2C%22responsive_web_media_download_video_enabled%22%3Afalse%2C%22responsive_web_enhance_cards_enabled%22%3Afalse%7D`;
     }
 
-    var final_url = `${base_url}${variable}${feature}`;
+    if (delete_options["field_toggles"] == false)  {
+    	var final_url = `${base_url}${variable}${feature}`;
+    } else {
+	var final_url = `${base_url}${variable}${feature}${field_toggles}`;
+    }
 
     const response = await fetch(final_url, {
         "headers": {
