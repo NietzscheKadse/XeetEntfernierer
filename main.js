@@ -33,9 +33,9 @@ var delete_options = {
     // Only deletes Tweets AFTER/BEFORE the set date (excluding it)
     // CAUTION: Sometimes it uses your Timezone and sometimes it uses GMT. So better give a day of buffer and delete the rest yourself, if you don't want to risk losing any Tweets outside the date range.
     "after_date": new Date('1900-01-01'),
-    "before_date": new Date('2100-01-01')
+    "before_date": new Date('2100-01-01'),
 
-    "field_toggles": true //If you have problems/errors as a last resort disabling this MIGHT fix it.
+    "field_toggles": true, //If you have problems/errors as a last resort disabling this MIGHT fix it.
 
     // ------------------------------------ //
     // DEPRECATED OPTIONS - MIGHT NOT WORK! //
