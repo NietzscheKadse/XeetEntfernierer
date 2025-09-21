@@ -1,6 +1,6 @@
 # Disclaimer
 
-This script *should* not delete anything you do not want, I use it rather often, but I'm not responsible for any issues. Use at your own risk if the 1% of failure concerns you.
+This script *should* not delete anything you do not want, I use it rather often, but I'm not responsible for any issues. Use at your own risk if the 1% chance of failure concerns you.
 
 I, Kadse, heavily modified the script heavily from Lyfhael's "DeleteTweets" (Found at https://github.com/Lyfhael/DeleteTweets) since it stopped working. I am not a JS-Expert, so there is a risk of issues, be aware of that. 
 
